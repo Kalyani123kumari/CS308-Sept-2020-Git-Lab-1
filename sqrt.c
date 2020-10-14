@@ -4,6 +4,8 @@ positive number. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <ctype.h>
+#include <string.h>
 
 int main(int argc, char* argv[]) {
 // function to find sqrt
@@ -11,9 +13,30 @@ int main(int argc, char* argv[]) {
 		printf("Usage: sqrt input\n\n");
 		exit(-1);
 	}
+ 	int i;
+    	long val;
+    	char *next;
 
-	int input = atoi(argv[1]);
-	printf("Sqrt of %d is %f\n",input,sqrt(input));
+	for (i = 1; i < argc; i++)
+	{
+		// Get value with failure detection.
+
+		val = strtol (argv[i], &next, 10);
+
+		// Check for empty string and characters left after conversion.
+
+		if ((next == argv[i]) || (*next != '\0')) 
+		{
+		    	printf ("'%s' is not valid\n", argv[i]);
+		} 	
+		else 
+		{
+			int input=atoi(argv[1]);
+			printf("Sqrt of %d is %f\n",input,sqrt(input));
+		}
+   	}
+
+	
 	printf("End of the program.Exiting\n");
 	return(0);
 

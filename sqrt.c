@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
 		}
    	}
 
-	
+	printf("conflict test")
 	printf("End of the program.Exiting\n");
 	return(0);
 

@@ -38,8 +38,6 @@ int main(int argc, char* argv[]) {
 				printf("Sqrt of %d is %f%s\n",input,sqrt(abs(input)),"i");
 		}
    	}
-
-	printf("conflict test")
 	printf("End of the program.Exiting\n");
 	return(0);
 
